@@ -40,14 +40,15 @@ func ToGoaBoard(board models.Board) *app.GoaBoardtype {
 
 func FromGoaBoard(board *app.GoaBoardtype) models.Board {
 	//Sets first cell inside the board
-	cells := make([]*models.Cell, (board.Height * board.Width))
-	boardCells := make([][]*models.Cell, board.Height)
+	boardCells := make([][]models.Cell, board.Height)
 
 	//Iterate through every cell in the board an map it into the
 	//proper response.
 	for rowIndex, rowValue := range board.Grid {
+
+		cells := make([]models.Cell, 0, 0)
 		for _, cellValue := range rowValue {
-			cell := &models.Cell{
+			cell := models.Cell{
 				Value: cellValue.Value,
 				Mine: cellValue.Mine,
 				Clicked: cellValue.Clicked,

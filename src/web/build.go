@@ -18,6 +18,10 @@ func NewBuildController(service *goa.Service) *BuildController {
 // BuildNumber runs the BuildNumber action.
 func (c *BuildController) BuildNumber(ctx *app.BuildNumberBuildContext) error {
 	// BuildController_BuildNumber: start_implement
-	return ctx.OK(&app.GoaConfirmation{Message:"Welcome to minesweeper!"})
+
+	// Put your logic here
+
 	// BuildController_BuildNumber: end_implement
+	res := &app.GoaConfirmation{}
+	return ctx.OK(res)
 }

@@ -23,6 +23,14 @@ var _ = Resource("minesweeper", func() {
 		Response(NotFound)
 	})
 
+	Action("ClickedCell", func() {
+		Description("Analyze cell clicked.")
+		Routing(PUT("/clicked-cell/:row/:cell"))
+		Response(OK, BoardType)
+		Response(NotFound)
+		//Get payload manually from body request
+	})
+
 })
 
 // BoardType defines the media type used to render the minesweeper board.
@@ -33,11 +41,12 @@ var BoardType = MediaType("application/vnd.goa.boardtype+json", func() {
 		Attribute("width", Integer, "Board width.")
 		Attribute("height", Integer, "Board height.")
 		Attribute("grid", ArrayOf(ArrayOf(CellType)), "Board grid.")
-		Required("mineNum", "width", "height")
+		Required("mineNum", "width", "height", "grid")
 	})
-	View("default", func() { // View defines a rendering of the media type.
-		Attribute("mineNum")   // Media types may have multiple views and must
-		Attribute("width") // have a "default" view.
+
+	View("default", func() {
+		Attribute("mineNum")
+		Attribute("width")
 		Attribute("height")
 		Attribute("grid")
 	})
@@ -52,6 +61,7 @@ var CellType = MediaType("application/vnd.goa.celltype+json", func() {
 		Attribute("value", Integer, "Attribute to know value of adjeacent cells.")
 		Required("mine", "clicked", "value")
 	})
+
 	View("default", func() {
 		Attribute("mine")
 		Attribute("clicked")
