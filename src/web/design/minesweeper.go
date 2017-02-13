@@ -16,7 +16,8 @@ var _ = Resource("minesweeper", func() {
 		Params(func() {
 			Param("width", Integer, "Board width.")
 			Param("height", Integer, "Board height.")
-			Param("mines", Integer, "amaount of mines that will be set on the board.")
+			Param("mines", Integer, "Amaount of mines that will be set on the board.")
+			Required("width", "height", "mines")
 		})
 		Response(OK, BoardType)
 		Response(NotFound)

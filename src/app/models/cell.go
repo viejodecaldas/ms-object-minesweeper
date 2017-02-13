@@ -11,31 +11,31 @@ const (
 
 //Defines the cell behaviour
 type Cell struct {
-	mine bool
-	clicked bool
-	value int
+	Mine bool
+	Clicked bool
+	Value int
 }
 
 //Method to know how to render the cell depending on the attributes values
 func (c *Cell) Render() string {
 	switch {
-	case c.clicked == false:
+	case c.Clicked == false:
 		return "?"
-	case c.mine == true:
+	case c.Mine == true:
 		return "X"
 	default:
-		return strconv.Itoa(c.value)
+		return strconv.Itoa(c.Value)
 	}
 }
 
 //Method that return the cell's behaviour
 func (c *Cell) Click() int {
 	switch {
-	case c.clicked == true:
+	case c.Clicked == true:
 		return AlreadyClicked
-	case c.mine == false:
+	case c.Mine == false:
 		return Ok
-	case c.mine == true:
+	case c.Mine == true:
 		return Mine
 	}
 	return AlreadyClicked
