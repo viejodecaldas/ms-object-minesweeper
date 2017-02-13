@@ -5,6 +5,7 @@ import (
 	"github.com/viejodecaldas/ms-object-minesweeper/src/web/app"
 )
 
+//Function to parse structure from model to response for the client
 func ToGoaBoard(board models.Board) *app.GoaBoardtype {
 	//Sets first cell inside the board
 	boardCells := make([][]*app.GoaCelltype, board.Height)
@@ -28,6 +29,7 @@ func ToGoaBoard(board models.Board) *app.GoaBoardtype {
 		boardCells[rowIndex] = cells
 	}
 
+	//Set values to the response structure
 	goa := &app.GoaBoardtype{
 		Height: board.Height,
 		Width: board.Width,
@@ -38,6 +40,7 @@ func ToGoaBoard(board models.Board) *app.GoaBoardtype {
 	return goa
 }
 
+//Function to parse from Goa structure to model structure
 func FromGoaBoard(board *app.GoaBoardtype) models.Board {
 	//Sets first cell inside the board
 	boardCells := make([][]models.Cell, board.Height)
@@ -61,6 +64,7 @@ func FromGoaBoard(board *app.GoaBoardtype) models.Board {
 		boardCells[rowIndex] = cells
 	}
 
+	//Sets the values for the models structure
 	model := models.Board{
 		Height: board.Height,
 		Width: board.Width,

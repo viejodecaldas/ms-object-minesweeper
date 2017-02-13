@@ -24,6 +24,7 @@ func NewMinesweeperController(service *goa.Service) *MinesweeperController {
 func (c *MinesweeperController) ClickedCell(ctx *app.ClickedCellMinesweeperContext) error {
 	// MinesweeperController_ClickedCell: start_implement
 
+	//Validate parameters sent
 	row, err := strconv.Atoi(ctx.Row)
 	if err != nil {
 		fmt.Println("Could not parse row value.")
@@ -36,6 +37,7 @@ func (c *MinesweeperController) ClickedCell(ctx *app.ClickedCellMinesweeperConte
 		return goa.ErrInternal(err)
 	}
 
+	//Decode request body
 	var goaBoard app.GoaBoardtype
 	err = json.NewDecoder(ctx.Body).Decode(&goaBoard)
 	if err != nil {
@@ -43,11 +45,10 @@ func (c *MinesweeperController) ClickedCell(ctx *app.ClickedCellMinesweeperConte
 		return goa.ErrInternal(err)
 	}
 
+	//Parse object to model to handle the game
 	board := convert.FromGoaBoard(&goaBoard)
 
-	fmt.Println("Goa Board: ", goaBoard)
-	fmt.Println("Board: ", board)
-
+	//Check position clicked by the user and validate
 	var notLost = true
 	if board.CheckPosition(row, cell) {
 		clickedCell := board.Grid[row][cell]
@@ -63,10 +64,12 @@ func (c *MinesweeperController) ClickedCell(ctx *app.ClickedCellMinesweeperConte
 		}
 	}
 
+	//If user clicked on a cell that had a mine then the game is over.
 	if !notLost {
 		return goa.ErrInternal(fmt.Errorf("Sorry, you lost!"))
 	}
 
+	//Return the board with the new set of values
 	return ctx.OK(convert.ToGoaBoard(board))
 	// MinesweeperController_ClickedCell: end_implement
 }
@@ -75,18 +78,21 @@ func (c *MinesweeperController) ClickedCell(ctx *app.ClickedCellMinesweeperConte
 func (c *MinesweeperController) StartNewGame(ctx *app.StartNewGameMinesweeperContext) error {
 	// MinesweeperController_StartNewGame: start_implement
 
+	//Set the initial values on the board
 	var board = models.Board{
 		Width: ctx.Width,
 		Height: ctx.Height,
 		MineNum: ctx.Mines,
 	}
 
+	//Build the board with initial setup
 	err := board.BuildBoard()
 	if err != nil {
 		fmt.Println("Error", err.Error())
 		return goa.ErrInternal(err)
 	}
 
+	//Return the initial board
 	return ctx.OK(convert.ToGoaBoard(board))
 
 	// MinesweeperController_StartNewGame: end_implement
