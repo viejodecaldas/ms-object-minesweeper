@@ -34,6 +34,7 @@ func ToGoaBoard(board models.Board) *app.GoaBoardtype {
 		Height: board.Height,
 		Width: board.Width,
 		MineNum: board.MineNum,
+		CellsRemaining: board.CellsRemaining,
 		Grid: boardCells,
 	}
 
@@ -69,6 +70,7 @@ func FromGoaBoard(board *app.GoaBoardtype) models.Board {
 		Height: board.Height,
 		Width: board.Width,
 		MineNum: board.MineNum,
+		CellsRemaining: board.CellsRemaining,
 		Grid: boardCells,
 	}
 

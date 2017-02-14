@@ -23,6 +23,7 @@ When user clicks on a cell then must invoke the endpoint POST `minesweeper/click
 * Cell: is the cell where user clicked.
 * Also the board with the previous move is expected, i.e.
 {
+  "cellsRemaining": 1,
   "grid": [
     [
       {
