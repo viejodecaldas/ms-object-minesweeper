@@ -19,9 +19,7 @@ func NewBuildController(service *goa.Service) *BuildController {
 func (c *BuildController) BuildNumber(ctx *app.BuildNumberBuildContext) error {
 	// BuildController_BuildNumber: start_implement
 
-	// Put your logic here
-
-	// BuildController_BuildNumber: end_implement
-	res := &app.GoaConfirmation{}
+	res := &app.GoaConfirmation{Message: "Health check"}
 	return ctx.OK(res)
+	// BuildController_BuildNumber: end_implement
 }

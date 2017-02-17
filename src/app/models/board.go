@@ -5,11 +5,13 @@ import (
 	"math/rand"
 )
 
+//Struct to handle the board behaviour
 type Board struct {
 	Grid [][]Cell
 	Height int
 	Width int
 	MineNum int
+	CellsRemaining int
 }
 
 //Method to build up the board with parameters sent
@@ -18,6 +20,7 @@ func (b *Board) BuildBoard() (err error) {
 	height := b.Height
 	width := b.Width
 	mineNum := b.MineNum
+	b.CellsRemaining = (b.Height * b.Width) - b.MineNum
 	b.Grid = make([][]Cell, height)
 	cells := make([]Cell, (height * width))
 

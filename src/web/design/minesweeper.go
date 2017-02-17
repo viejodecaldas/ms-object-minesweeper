@@ -26,7 +26,8 @@ var _ = Resource("minesweeper", func() {
 	Action("ClickedCell", func() {
 		Description("Analyze cell clicked.")
 		Routing(PUT("/clicked-cell/:row/:cell"))
-		Response(OK, BoardType)
+		Response(Accepted, BoardType)
+		Response(OK, ConfirmationMedia)
 		Response(NotFound)
 		//Get payload manually from body request
 	})
@@ -40,14 +41,16 @@ var BoardType = MediaType("application/vnd.goa.boardtype+json", func() {
 		Attribute("mineNum", Integer, "Number of mines set.")
 		Attribute("width", Integer, "Board width.")
 		Attribute("height", Integer, "Board height.")
+		Attribute("cellsRemaining", Integer, "Number of cells remaining untill game ends.")
 		Attribute("grid", ArrayOf(ArrayOf(CellType)), "Board grid.")
-		Required("mineNum", "width", "height", "grid")
+		Required("mineNum", "width", "height", "grid", "cellsRemaining")
 	})
 
 	View("default", func() {
 		Attribute("mineNum")
 		Attribute("width")
 		Attribute("height")
+		Attribute("cellsRemaining")
 		Attribute("grid")
 	})
 })

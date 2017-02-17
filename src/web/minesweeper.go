@@ -59,6 +59,7 @@ func (c *MinesweeperController) ClickedCell(ctx *app.ClickedCellMinesweeperConte
 		case models.Ok:
 			clickedCell.Clicked = true
 			board.Grid[row][cell] = clickedCell
+			board.CellsRemaining--
 		case models.AlreadyClicked:
 			fmt.Println("you've already clicked that position")
 		}
@@ -69,8 +70,14 @@ func (c *MinesweeperController) ClickedCell(ctx *app.ClickedCellMinesweeperConte
 		return goa.ErrInternal(fmt.Errorf("Sorry, you lost!"))
 	}
 
+	//If user hasn't find a mine and there is no more cells remaining
+	//Then user has won the game
+	if notLost && board.CellsRemaining == 0 {
+		return ctx.OK(&app.GoaConfirmation{Message: "Congratulations, you won!"})
+	}
+
 	//Return the board with the new set of values
-	return ctx.OK(convert.ToGoaBoard(board))
+	return ctx.Accepted(convert.ToGoaBoard(board))
 	// MinesweeperController_ClickedCell: end_implement
 }
 
