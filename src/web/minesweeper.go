@@ -3,11 +3,11 @@ package main
 import (
 	"github.com/goadesign/goa"
 	"github.com/viejodecaldas/ms-object-minesweeper/src/web/app"
-	"github.com/viejodecaldas/ms-object-minesweeper/src/app/models"
 	"fmt"
-	"github.com/viejodecaldas/ms-object-minesweeper/src/app/convert"
 	"encoding/json"
 	"strconv"
+	"github.com/viejodecaldas/ms-object-minesweeper/src/app/convert"
+	"github.com/viejodecaldas/ms-object-minesweeper/src/app/models"
 )
 
 // MinesweeperController implements the minesweeper resource.

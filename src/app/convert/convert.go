@@ -1,8 +1,8 @@
 package convert
 
 import (
-	"github.com/viejodecaldas/ms-object-minesweeper/src/app/models"
 	"github.com/viejodecaldas/ms-object-minesweeper/src/web/app"
+	"github.com/viejodecaldas/ms-object-minesweeper/src/app/models"
 )
 
 //Function to parse structure from model to response for the client
