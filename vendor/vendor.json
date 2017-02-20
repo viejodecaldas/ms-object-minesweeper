@@ -45,6 +45,12 @@
 			"revisionTime": "2016-07-12T22:23:56Z"
 		},
 		{
+			"checksumSHA1": "ZYi+F6/mtxYq/bU4aF3gTpgZOWQ=",
+			"path": "github.com/kyani-inc/kms-object-events/src/kiosk/app",
+			"revision": "bdd94395d9a6ebb0ca2a5456ef10f075f699e4d4",
+			"revisionTime": "2017-02-17T21:25:19Z"
+		},
+		{
 			"checksumSHA1": "Gh5leCdP8OrwVIRCfRDeUElXtiM=",
 			"path": "github.com/labstack/echo",
 			"revision": "ed7353cf6088619c60c02604ad2cf2fe5189e521",
