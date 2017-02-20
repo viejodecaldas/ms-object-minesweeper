@@ -7,11 +7,11 @@ import (
 
 //Struct to handle the board behaviour
 type Board struct {
-	Grid [][]Cell
-	Height int
-	Width int
-	MineNum int
-	CellsRemaining int
+	Grid [][]Cell        `json:"grid"`
+	Height int        `json:"height"`
+	Width int        `json:"width"`
+	MineNum int        `json:"mineNum"`
+	CellsRemaining int `json:"cellsRemaining"`
 }
 
 //Method to build up the board with parameters sent

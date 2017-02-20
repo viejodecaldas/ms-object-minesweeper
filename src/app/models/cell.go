@@ -11,9 +11,9 @@ const (
 
 //Defines the cell behaviour
 type Cell struct {
-	Mine bool
-	Clicked bool
-	Value int
+	Mine bool        `json:"mine"`
+	Clicked bool `json:"clicked"`
+	Value int        `json:"value"`
 }
 
 //Method to know how to render the cell depending on the attributes values
