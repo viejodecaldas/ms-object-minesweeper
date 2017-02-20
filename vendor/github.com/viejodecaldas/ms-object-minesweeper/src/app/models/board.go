@@ -7,11 +7,11 @@ import (
 
 //Struct to handle the board behaviour
 type Board struct {
-	Grid [][]Cell        `json:"grid"`
-	Height int        `json:"height"`
-	Width int        `json:"width"`
-	MineNum int        `json:"mineNum"`
-	CellsRemaining int `json:"cellsRemaining"`
+	Grid           [][]Cell `json:"grid"`
+	Height         int      `json:"height"`
+	Width          int      `json:"width"`
+	MineNum        int      `json:"mineNum"`
+	CellsRemaining int      `json:"cellsRemaining"`
 }
 
 //Method to build up the board with parameters sent
@@ -24,7 +24,7 @@ func (b *Board) BuildBoard() (err error) {
 	b.Grid = make([][]Cell, height)
 	cells := make([]Cell, (height * width))
 
-	if mineNum > b.Height * b.Width - 1 {
+	if mineNum > b.Height*b.Width-1 {
 		err = errors.New("Number of mines cannot exceed number of cells.")
 		return err
 	}
@@ -34,9 +34,9 @@ func (b *Board) BuildBoard() (err error) {
 	//loop through all cells in the slice, keeping track of index
 	for index := range cells {
 		cells[index] = Cell{
-			Mine: mines[index],
+			Mine:    mines[index],
 			Clicked: false,
-			Value: 0,
+			Value:   0,
 		}
 	}
 
@@ -49,13 +49,13 @@ func (b *Board) BuildBoard() (err error) {
 	for i, row := range b.Grid {
 		for j, cell := range row {
 			if cell.Mine {
-				if b.CheckPosition(i-1, j-1){
+				if b.CheckPosition(i-1, j-1) {
 					b.Grid[i-1][j-1].Value++
 				}
-				if b.CheckPosition(i-1, j){
+				if b.CheckPosition(i-1, j) {
 					b.Grid[i-1][j].Value++
 				}
-				if b.CheckPosition(i-1, j+1){
+				if b.CheckPosition(i-1, j+1) {
 					b.Grid[i-1][j+1].Value++
 				}
 				if b.CheckPosition(i, j-1) {
@@ -94,7 +94,7 @@ func (b *Board) genMines() []bool {
 }
 
 //Method to check if position is valid
-func (b *Board) CheckPosition(r, c int) bool{
+func (b *Board) CheckPosition(r, c int) bool {
 	if r < 0 || r > b.Height-1 {
 		return false
 	}

@@ -1,12 +1,11 @@
 package main
 
 import (
-	"github.com/goadesign/goa"
 	"github.com/labstack/echo"
 	"github.com/viejodecaldas/ms-object-minesweeper/src/app/models"
-	"github.com/kyani-inc/kms-object-events/src/kiosk/app"
 	"fmt"
 	"strconv"
+	"github.com/viejodecaldas/ms-object-minesweeper/src/app/app"
 )
 
 // TicketController returns information about a ticket.
@@ -69,7 +68,8 @@ func (MinesweeperController) ClickedCell(ctx echo.Context) error {
 
 	//If user clicked on a cell that had a mine then the game is over.
 	if !notLost {
-		return goa.ErrInternal(fmt.Errorf("Sorry, you lost!"))
+		return app.Error(ctx,
+			fmt.Errorf("Sorry, you lost!"))
 	}
 
 	//If user hasn't find a mine and there is no more cells remaining
@@ -121,8 +121,9 @@ func (c *MinesweeperController) StartNewGame(ctx echo.Context) error {
 	//Build the board with initial setup
 	err = board.BuildBoard()
 	if err != nil {
-		fmt.Println("Error", err.Error())
-		return goa.ErrInternal(err)
+		return app.Error(ctx,
+			fmt.Errorf("Error: %s",
+				err.Error()))
 	}
 
 	//Return the initial board

@@ -9,46 +9,10 @@
 	"ignore": "test",
 	"package": [
 		{
-			"checksumSHA1": "d6798KSc0jDg2MHNxKdgyNfMK7A=",
-			"path": "github.com/armon/go-metrics",
-			"revision": "fbf75676ee9c0a3a23eb0a4d9220a3612cfbd1ed",
-			"revisionTime": "2016-05-21T00:23:38Z"
-		},
-		{
 			"checksumSHA1": "ilxtmghXZ7UhH+8HqzQvDNFohik=",
 			"path": "github.com/dgrijalva/jwt-go",
 			"revision": "01aeca54ebda6e0fbfafd0a524d234159c05ec20",
 			"revisionTime": "2016-07-05T20:30:06Z"
-		},
-		{
-			"checksumSHA1": "67Ufp7gCzJyjLVW3iW3og8uVtkw=",
-			"path": "github.com/dimfeld/httppath",
-			"revision": "c8e499c3ef3c3e272ed8bdcc1ccf39f73c88debc",
-			"revisionTime": "2014-05-15T16:47:37Z"
-		},
-		{
-			"checksumSHA1": "nIykkBgco5LIwtjzs0WDcgiIAWg=",
-			"path": "github.com/dimfeld/httptreemux",
-			"revision": "612c3d8e47f5a166d9346b694cf2aeb68eff5369",
-			"revisionTime": "2016-04-05T15:43:20Z"
-		},
-		{
-			"checksumSHA1": "8mbEu7oU5ocP09qXoxpujVXqHQY=",
-			"path": "github.com/goadesign/goa",
-			"revision": "d4a0b4de7625b40613a1e0d30b3fa488400f76e0",
-			"revisionTime": "2016-07-12T22:23:56Z"
-		},
-		{
-			"checksumSHA1": "d3emE5TAeRew3fBV7JYwGRkGOpE=",
-			"path": "github.com/goadesign/goa/uuid",
-			"revision": "d4a0b4de7625b40613a1e0d30b3fa488400f76e0",
-			"revisionTime": "2016-07-12T22:23:56Z"
-		},
-		{
-			"checksumSHA1": "ZYi+F6/mtxYq/bU4aF3gTpgZOWQ=",
-			"path": "github.com/kyani-inc/kms-object-events/src/kiosk/app",
-			"revision": "bdd94395d9a6ebb0ca2a5456ef10f075f699e4d4",
-			"revisionTime": "2017-02-17T21:25:19Z"
 		},
 		{
 			"checksumSHA1": "Gh5leCdP8OrwVIRCfRDeUElXtiM=",
@@ -99,34 +63,28 @@
 			"revisionTime": "2015-12-11T00:06:21Z"
 		},
 		{
-			"checksumSHA1": "1myjT8gKwUI3WNE5a/85jNPL8Fo=",
-			"path": "github.com/satori/go.uuid",
-			"revision": "879c5887cd475cd7864858769793b2ceb0d44feb",
-			"revisionTime": "2016-06-07T14:43:47Z"
-		},
-		{
 			"checksumSHA1": "PQy6kV2rK5B3qtCRpANzgRQPnFs=",
 			"path": "github.com/valyala/fasttemplate",
 			"revision": "3b874956e03f1636d171bda64b130f9135f42cff",
 			"revisionTime": "2016-03-15T19:31:34Z"
 		},
 		{
-			"checksumSHA1": "OYyoOj+uAV+AyiyMTQn/QdDygJA=",
+			"checksumSHA1": "xl5Akw9gM07TYpdttBAXGn+SPec=",
 			"path": "github.com/viejodecaldas/ms-object-minesweeper/src",
-			"revision": "40e35f95eacfc62d62e784ee122e305bc1fa302b",
-			"revisionTime": "2017-02-20T21:31:02Z"
+			"revision": "e912476e19cae01a2fc312c99975e164be7bb2d5",
+			"revisionTime": "2017-02-20T21:53:43Z"
 		},
 		{
 			"checksumSHA1": "vsodeddfIbSOSjunKsUz+vmv2qs=",
 			"path": "github.com/viejodecaldas/ms-object-minesweeper/src/app/app",
-			"revision": "5e58de3801e1058b16046b588fd79277687f5721",
-			"revisionTime": "2017-02-20T21:34:10Z"
+			"revision": "e912476e19cae01a2fc312c99975e164be7bb2d5",
+			"revisionTime": "2017-02-20T21:53:43Z"
 		},
 		{
-			"checksumSHA1": "0KdTULfZE6a/nMVFuVX4H5OPolU=",
+			"checksumSHA1": "kbPLooyyBRjbujTwTFcNQLc94ks=",
 			"path": "github.com/viejodecaldas/ms-object-minesweeper/src/app/models",
-			"revision": "40e35f95eacfc62d62e784ee122e305bc1fa302b",
-			"revisionTime": "2017-02-20T21:31:02Z"
+			"revision": "e912476e19cae01a2fc312c99975e164be7bb2d5",
+			"revisionTime": "2017-02-20T21:53:43Z"
 		},
 		{
 			"checksumSHA1": "TK1Yr8BbwionaaAvM+77lwAAx/8=",
