@@ -1,6 +1,10 @@
 {
 	"comment": "",
 	"ignore": "test",
+	"heroku": {
+		"install" : [ "./..." ],
+		"goVersion": "go1.7"
+	},
 	"package": [
 		{
 			"checksumSHA1": "d6798KSc0jDg2MHNxKdgyNfMK7A=",
