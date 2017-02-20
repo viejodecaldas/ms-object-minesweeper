@@ -1,4 +1,4 @@
-package models
+package app
 
 import (
 	"github.com/labstack/echo"

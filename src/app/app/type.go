@@ -1,4 +1,4 @@
-package models
+package app
 
 // Confirmation generic request confirmation.
 type Confirmation struct {

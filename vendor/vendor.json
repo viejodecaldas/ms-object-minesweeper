@@ -111,6 +111,12 @@
 			"revisionTime": "2017-02-20T21:31:02Z"
 		},
 		{
+			"checksumSHA1": "vsodeddfIbSOSjunKsUz+vmv2qs=",
+			"path": "github.com/viejodecaldas/ms-object-minesweeper/src/app/app",
+			"revision": "5e58de3801e1058b16046b588fd79277687f5721",
+			"revisionTime": "2017-02-20T21:34:10Z"
+		},
+		{
 			"checksumSHA1": "0KdTULfZE6a/nMVFuVX4H5OPolU=",
 			"path": "github.com/viejodecaldas/ms-object-minesweeper/src/app/models",
 			"revision": "40e35f95eacfc62d62e784ee122e305bc1fa302b",
@@ -141,5 +147,5 @@
 			"revisionTime": "2017-01-14T04:22:49Z"
 		}
 	],
-	"rootPath": "github.com/viejodecaldas/ms-object-minesweeper"
+	"rootPath": "github.com/viejodecaldas/ms-object-minesweeper/src"
 }
