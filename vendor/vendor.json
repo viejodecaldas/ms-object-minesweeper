@@ -1,10 +1,12 @@
 {
 	"comment": "",
-	"ignore": "test",
 	"heroku": {
-		"install" : [ "./..." ],
-		"goVersion": "go1.7"
+		"goVersion": "go1.7",
+		"install": [
+			"./..."
+		]
 	},
+	"ignore": "test",
 	"package": [
 		{
 			"checksumSHA1": "d6798KSc0jDg2MHNxKdgyNfMK7A=",
@@ -41,12 +43,6 @@
 			"path": "github.com/goadesign/goa/uuid",
 			"revision": "d4a0b4de7625b40613a1e0d30b3fa488400f76e0",
 			"revisionTime": "2016-07-12T22:23:56Z"
-		},
-		{
-			"checksumSHA1": "ZYi+F6/mtxYq/bU4aF3gTpgZOWQ=",
-			"path": "github.com/kyani-inc/kms-object-events/src/kiosk/app",
-			"revision": "bdd94395d9a6ebb0ca2a5456ef10f075f699e4d4",
-			"revisionTime": "2017-02-17T21:25:19Z"
 		},
 		{
 			"checksumSHA1": "Gh5leCdP8OrwVIRCfRDeUElXtiM=",
@@ -109,6 +105,18 @@
 			"revisionTime": "2016-03-15T19:31:34Z"
 		},
 		{
+			"checksumSHA1": "OYyoOj+uAV+AyiyMTQn/QdDygJA=",
+			"path": "github.com/viejodecaldas/ms-object-minesweeper/src",
+			"revision": "40e35f95eacfc62d62e784ee122e305bc1fa302b",
+			"revisionTime": "2017-02-20T21:31:02Z"
+		},
+		{
+			"checksumSHA1": "0KdTULfZE6a/nMVFuVX4H5OPolU=",
+			"path": "github.com/viejodecaldas/ms-object-minesweeper/src/app/models",
+			"revision": "40e35f95eacfc62d62e784ee122e305bc1fa302b",
+			"revisionTime": "2017-02-20T21:31:02Z"
+		},
+		{
 			"checksumSHA1": "TK1Yr8BbwionaaAvM+77lwAAx/8=",
 			"path": "golang.org/x/crypto/acme",
 			"revision": "2e74c773682f59dc50a56475f7918dd8fa6dcaf8",
@@ -133,5 +141,5 @@
 			"revisionTime": "2017-01-14T04:22:49Z"
 		}
 	],
-	"rootPath": "github.com/viejodecaldas/ms-object-minesweeper/src"
+	"rootPath": "github.com/viejodecaldas/ms-object-minesweeper"
 }

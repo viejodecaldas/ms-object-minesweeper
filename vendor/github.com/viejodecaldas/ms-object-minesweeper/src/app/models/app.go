@@ -1,9 +1,8 @@
-package app
+package models
 
 import (
-	"net/http"
-
 	"github.com/labstack/echo"
+	"net/http"
 )
 
 // OK responds with a 200 ok JSON packet.
@@ -25,24 +24,4 @@ func Error(ctx echo.Context, err error) error {
 	}
 
 	return ctx.JSON(http.StatusInternalServerError, e)
-}
-
-// CustomError responds with a custom error code.
-func CustomError(ctx echo.Context, code int, err error) error {
-	e := ErrorResponse{
-		Status: code,
-		Detail: err.Error(),
-	}
-
-	return ctx.JSON(code, e)
-}
-
-// BadRequest responds with a 400 bad request error.
-func BadRequest(ctx echo.Context, err error) error {
-	e := ErrorResponse{
-		Status: http.StatusBadRequest,
-		Detail: err.Error(),
-	}
-
-	return ctx.JSON(http.StatusBadRequest, e)
 }
