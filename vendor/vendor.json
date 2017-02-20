@@ -1,0 +1,133 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "d6798KSc0jDg2MHNxKdgyNfMK7A=",
+			"path": "github.com/armon/go-metrics",
+			"revision": "fbf75676ee9c0a3a23eb0a4d9220a3612cfbd1ed",
+			"revisionTime": "2016-05-21T00:23:38Z"
+		},
+		{
+			"checksumSHA1": "ilxtmghXZ7UhH+8HqzQvDNFohik=",
+			"path": "github.com/dgrijalva/jwt-go",
+			"revision": "01aeca54ebda6e0fbfafd0a524d234159c05ec20",
+			"revisionTime": "2016-07-05T20:30:06Z"
+		},
+		{
+			"checksumSHA1": "67Ufp7gCzJyjLVW3iW3og8uVtkw=",
+			"path": "github.com/dimfeld/httppath",
+			"revision": "c8e499c3ef3c3e272ed8bdcc1ccf39f73c88debc",
+			"revisionTime": "2014-05-15T16:47:37Z"
+		},
+		{
+			"checksumSHA1": "nIykkBgco5LIwtjzs0WDcgiIAWg=",
+			"path": "github.com/dimfeld/httptreemux",
+			"revision": "612c3d8e47f5a166d9346b694cf2aeb68eff5369",
+			"revisionTime": "2016-04-05T15:43:20Z"
+		},
+		{
+			"checksumSHA1": "8mbEu7oU5ocP09qXoxpujVXqHQY=",
+			"path": "github.com/goadesign/goa",
+			"revision": "d4a0b4de7625b40613a1e0d30b3fa488400f76e0",
+			"revisionTime": "2016-07-12T22:23:56Z"
+		},
+		{
+			"checksumSHA1": "d3emE5TAeRew3fBV7JYwGRkGOpE=",
+			"path": "github.com/goadesign/goa/uuid",
+			"revision": "d4a0b4de7625b40613a1e0d30b3fa488400f76e0",
+			"revisionTime": "2016-07-12T22:23:56Z"
+		},
+		{
+			"checksumSHA1": "ZYi+F6/mtxYq/bU4aF3gTpgZOWQ=",
+			"path": "github.com/kyani-inc/kms-object-events/src/kiosk/app",
+			"revision": "bdd94395d9a6ebb0ca2a5456ef10f075f699e4d4",
+			"revisionTime": "2017-02-17T21:25:19Z"
+		},
+		{
+			"checksumSHA1": "Gh5leCdP8OrwVIRCfRDeUElXtiM=",
+			"path": "github.com/labstack/echo",
+			"revision": "ed7353cf6088619c60c02604ad2cf2fe5189e521",
+			"revisionTime": "2017-01-16T07:13:46Z"
+		},
+		{
+			"checksumSHA1": "lQzNtbHwItj1FaiwS7G6bNBLfoA=",
+			"path": "github.com/labstack/echo/middleware",
+			"revision": "ed7353cf6088619c60c02604ad2cf2fe5189e521",
+			"revisionTime": "2017-01-16T07:13:46Z"
+		},
+		{
+			"checksumSHA1": "NvfQq6Y6kh9cMw+y1m00ivEd5b4=",
+			"path": "github.com/labstack/gommon/bytes",
+			"revision": "f72d3c883f8ea180da8f085dd320804c41332ad1",
+			"revisionTime": "2017-01-12T04:03:50Z"
+		},
+		{
+			"checksumSHA1": "R6DzcBLEP0BONPpsyr+11N7xh5w=",
+			"path": "github.com/labstack/gommon/color",
+			"revision": "f72d3c883f8ea180da8f085dd320804c41332ad1",
+			"revisionTime": "2017-01-12T04:03:50Z"
+		},
+		{
+			"checksumSHA1": "uHA6zbtxzJce4r+6uk8zu11qkuk=",
+			"path": "github.com/labstack/gommon/log",
+			"revision": "f72d3c883f8ea180da8f085dd320804c41332ad1",
+			"revisionTime": "2017-01-12T04:03:50Z"
+		},
+		{
+			"checksumSHA1": "XvsHo25Kr69E5xxTDatXzCQc6sI=",
+			"path": "github.com/labstack/gommon/random",
+			"revision": "f72d3c883f8ea180da8f085dd320804c41332ad1",
+			"revisionTime": "2017-01-12T04:03:50Z"
+		},
+		{
+			"checksumSHA1": "6wAWOVRtaH7hX48hmw9o7noyy5Q=",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "9056b7a9f2d1f2d96498d6d146acd1f9d5ed3d59",
+			"revisionTime": "2016-06-02T15:08:27Z"
+		},
+		{
+			"checksumSHA1": "NkbetqlpWBi3gP08JDneC+axTKw=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "56b76bdf51f7708750eac80fa38b952bb9f32639",
+			"revisionTime": "2015-12-11T00:06:21Z"
+		},
+		{
+			"checksumSHA1": "1myjT8gKwUI3WNE5a/85jNPL8Fo=",
+			"path": "github.com/satori/go.uuid",
+			"revision": "879c5887cd475cd7864858769793b2ceb0d44feb",
+			"revisionTime": "2016-06-07T14:43:47Z"
+		},
+		{
+			"checksumSHA1": "PQy6kV2rK5B3qtCRpANzgRQPnFs=",
+			"path": "github.com/valyala/fasttemplate",
+			"revision": "3b874956e03f1636d171bda64b130f9135f42cff",
+			"revisionTime": "2016-03-15T19:31:34Z"
+		},
+		{
+			"checksumSHA1": "TK1Yr8BbwionaaAvM+77lwAAx/8=",
+			"path": "golang.org/x/crypto/acme",
+			"revision": "2e74c773682f59dc50a56475f7918dd8fa6dcaf8",
+			"revisionTime": "2017-01-10T16:30:15Z"
+		},
+		{
+			"checksumSHA1": "MG1frAM4p4lg1ioOhUa7rjN3xm0=",
+			"path": "golang.org/x/crypto/acme/autocert",
+			"revision": "2e74c773682f59dc50a56475f7918dd8fa6dcaf8",
+			"revisionTime": "2017-01-10T16:30:15Z"
+		},
+		{
+			"checksumSHA1": "9jjO5GjLa0XF/nfWihF02RoH4qc=",
+			"path": "golang.org/x/net/context",
+			"revision": "f2499483f923065a842d38eb4c7f1927e6fc6e6d",
+			"revisionTime": "2017-01-14T04:22:49Z"
+		},
+		{
+			"checksumSHA1": "WHc3uByvGaMcnSoI21fhzYgbOgg=",
+			"path": "golang.org/x/net/context/ctxhttp",
+			"revision": "f2499483f923065a842d38eb4c7f1927e6fc6e6d",
+			"revisionTime": "2017-01-14T04:22:49Z"
+		}
+	],
+	"rootPath": "github.com/viejodecaldas/ms-object-minesweeper"
+}
