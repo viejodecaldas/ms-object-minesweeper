@@ -1,1 +1,1 @@
-web: ms-object-minesweeper
+web: ms-object-minesweeper/src
