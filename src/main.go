@@ -4,6 +4,8 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"net/http"
+	"os"
+	"fmt"
 )
 
 var (
@@ -11,6 +13,11 @@ var (
 )
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		panic(fmt.Errorf("PORT var is not set."))
+	}
+
 	// setup echo instance
 	server := echo.New()
 
@@ -30,5 +37,5 @@ func main() {
 	minesweeperController.Mount(server)
 
 	// graceful shutdown - setting up the termination timeout to 30 seconds.
-	server.Start(":8080")
+	server.Start(":" + port)
 }
