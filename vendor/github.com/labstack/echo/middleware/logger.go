@@ -35,33 +35,33 @@ type (
 		// - referer
 		// - user_agent
 		// - status
-		// - latency (In microseconds)
+		// - latency (In nanoseconds)
 		// - latency_human (Human readable)
 		// - bytes_in (Bytes received)
 		// - bytes_out (Bytes sent)
-		// - header:<name>
-		// - query:<name>
-		// - form:<name>
+		// - header:<NAME>
+		// - query:<NAME>
+		// - form:<NAME>
 		//
 		// Example "${remote_ip} ${status}"
 		//
 		// Optional. Default value DefaultLoggerConfig.Format.
 		Format string `json:"format"`
 
-		// Output is a writer where logs are written.
+		// Output is a writer where logs in JSON format are written.
 		// Optional. Default value os.Stdout.
 		Output io.Writer
 
 		template *fasttemplate.Template
 		colorer  *color.Color
-		pool     sync.Pool
+		pool     *sync.Pool
 	}
 )
 
 var (
 	// DefaultLoggerConfig is the default Logger middleware config.
 	DefaultLoggerConfig = LoggerConfig{
-		Skipper: defaultSkipper,
+		Skipper: DefaultSkipper,
 		Format: `{"time":"${time_rfc3339_nano}","remote_ip":"${remote_ip}","host":"${host}",` +
 			`"method":"${method}","uri":"${uri}","status":${status}, "latency":${latency},` +
 			`"latency_human":"${latency_human}","bytes_in":${bytes_in},` +
@@ -93,7 +93,7 @@ func LoggerWithConfig(config LoggerConfig) echo.MiddlewareFunc {
 	config.template = fasttemplate.New(config.Format, "${", "}")
 	config.colorer = color.New()
 	config.colorer.SetOutput(config.Output)
-	config.pool = sync.Pool{
+	config.pool = &sync.Pool{
 		New: func() interface{} {
 			return bytes.NewBuffer(make([]byte, 256))
 		},
@@ -157,8 +157,8 @@ func LoggerWithConfig(config LoggerConfig) echo.MiddlewareFunc {
 					}
 					return buf.WriteString(s)
 				case "latency":
-					l := stop.Sub(start).Nanoseconds() / int64(time.Microsecond)
-					return buf.WriteString(strconv.FormatInt(l, 10))
+					l := stop.Sub(start)
+					return buf.WriteString(strconv.FormatInt(int64(l), 10))
 				case "latency_human":
 					return buf.WriteString(stop.Sub(start).String())
 				case "bytes_in":

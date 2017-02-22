@@ -103,3 +103,17 @@ func (b *Board) CheckPosition(r, c int) bool {
 	}
 	return true
 }
+
+//Method to save the board game
+func (b *Board) SaveGame() error {
+	//TODO: Check if heroku has NoSQL functionality to save board state
+	return nil
+}
+
+//Method to load a saved game.
+//Game ID should be the name given to saved game or maybe the
+//user ID
+func (b *Board) LoadGame(gameID int) error {
+	//TODO: get the NoSQL info to re-create the actual board game
+	return nil
+}

@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/labstack/echo"
-	"github.com/viejodecaldas/ms-object-minesweeper/src/app/models"
 	"fmt"
-	"strconv"
+	"github.com/labstack/echo"
 	"github.com/viejodecaldas/ms-object-minesweeper/src/app/app"
+	"github.com/viejodecaldas/ms-object-minesweeper/src/app/models"
+	"strconv"
 )
 
 // TicketController returns information about a ticket.
@@ -17,10 +17,51 @@ func (mc MinesweeperController) Mount(e *echo.Echo) {
 
 	g.GET("/new-game", mc.StartNewGame)
 	g.PUT("/clicked-cell/:row/:cell", mc.ClickedCell)
+	g.POST("/save-game", mc.SaveGame)
+	g.GET("/load-game/:gameID", mc.LoadGame)
+}
+
+func (ms *MinesweeperController) LoadGame(ctx echo.Context) error {
+	//Validate parameters sent
+	gameID, err := strconv.Atoi(ctx.Param("gameID"))
+	if err != nil {
+		return app.Error(ctx,
+			fmt.Errorf("Could not parse game ID value %s. Error: %s",
+				ctx.QueryParam("gameID"),
+				err.Error()))
+	}
+
+	var board models.Board
+	board.LoadGame(gameID)
+
+	//Return the saved board game
+	return app.Success(ctx, board)
+}
+
+//Method to save a board game
+func (ms *MinesweeperController) SaveGame(ctx echo.Context) error {
+	//Decode request body
+	var board models.Board
+	err := ctx.Bind(&board)
+	if err != nil {
+		return app.Error(ctx,
+			fmt.Errorf("Could not decode body from save game endpoint. Error: %s",
+				err.Error()))
+	}
+
+	//Save the actual state of the board
+	err = board.SaveGame()
+	if err != nil {
+		return app.Error(ctx,
+			fmt.Errorf("Could not save game. Error: %s",
+				err.Error()))
+	}
+
+	return app.OK(ctx, "Game Saved Successfully!")
 }
 
 // ClickedCell runs the ClickedCell action.
-func (MinesweeperController) ClickedCell(ctx echo.Context) error {
+func (ms *MinesweeperController) ClickedCell(ctx echo.Context) error {
 	// MinesweeperController_ClickedCell: start_implement
 
 	//Validate parameters sent
@@ -84,7 +125,7 @@ func (MinesweeperController) ClickedCell(ctx echo.Context) error {
 }
 
 // StartNewGame runs the StartNewGame action.
-func (c *MinesweeperController) StartNewGame(ctx echo.Context) error {
+func (ms *MinesweeperController) StartNewGame(ctx echo.Context) error {
 	// MinesweeperController_StartNewGame: start_implement
 
 	width, err := strconv.Atoi(ctx.QueryParam("width"))
@@ -113,8 +154,8 @@ func (c *MinesweeperController) StartNewGame(ctx echo.Context) error {
 
 	//Set the initial values on the board
 	var board = models.Board{
-		Width: width,
-		Height: height,
+		Width:   width,
+		Height:  height,
 		MineNum: mines,
 	}
 
